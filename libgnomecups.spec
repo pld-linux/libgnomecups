@@ -12,7 +12,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cups-devel
 BuildRequires:	glib2-devel >= 2.0.0
-BuildRequires:	gnome-common >= 2.4.0
+BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,7 +52,7 @@ Statyczna biblioteka libgnomecups.
 
 %build
 %{__libtoolize}
-%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
