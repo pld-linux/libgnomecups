@@ -2,12 +2,13 @@ Summary:	GNOME CUPS library
 Summary(pl):	Biblioteka GNOME CUPS
 Name:		libgnomecups
 Version:	0.1.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.1/%{name}-%{version}.tar.bz2
 # Source0-md5:	bded0d29ffaf9040b832766133daf66a
 URL:		http://www.gnome.org/
+BuildRequires:	automake
 BuildRequires:	cups-devel
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,7 +23,7 @@ Biblioteka GNOME CUPS - bêd±ca interfejsem do biblioteki CUPS.
 Summary:	Devel files for libgnomecups
 Summary(pl):	Pliki nag³ówkowe libgnomecups
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Devel files for libgnomecups.
@@ -34,7 +35,7 @@ Pliki nag³ówkowe libgnomecups.
 Summary:	libgnomecups static library
 Summary(pl):	Statyczna biblioteka libgnomecups
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 libgnomecups static library.
