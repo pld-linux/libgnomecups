@@ -1,12 +1,12 @@
 Summary:	GNOME CUPS library
 Summary(pl):	Biblioteka GNOME CUPS
 Name:		libgnomecups
-Version:	0.1.13
+Version:	0.1.14
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	0103893afb7bf0d78f6c6a196990b52d
+# Source0-md5:	cb383a9502950aaeeb67be3514755321
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
