@@ -7,6 +7,8 @@ Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.1/%{name}-%{version}.tar.bz2
 # Source0-md5:	26a3fb43696ea6c0973e7a16307fa819
 URL:		http://www.gnome.org/
+BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	cups-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -53,6 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog
 %{_includedir}/%{name}-1
 %{_libdir}/libgnomecups*.la
 %{_libdir}/libgnomecups*.so
