@@ -1,16 +1,20 @@
 Summary:	GNOME CUPS library
 Summary(pl):	Biblioteka GNOME CUPS
 Name:		libgnomecups
-Version:	0.1.8
+Version:	0.1.9
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	6e05022bfe400d3730515b848e663bdc
+# Source0-md5:	b846a90ba66242565174ca0e317a0f17
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cups-devel
 BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	gnome-common >= 2.4.0
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,6 +28,7 @@ Summary:	Devel files for libgnomecups
 Summary(pl):	Pliki nag³ówkowe libgnomecups
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	glib2-devel
 
 %description devel
 Devel files for libgnomecups.
@@ -45,9 +50,16 @@ Statyczna biblioteka libgnomecups.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
 cp -f /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
