@@ -1,12 +1,12 @@
 Summary:	GNOME CUPS library
 Summary(pl):	Biblioteka GNOME CUPS
 Name:		libgnomecups
-Version:	0.1.10
+Version:	0.1.11
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	9e76b5f06c230022d8697f110b408d44
+# Source0-md5:	dab64e9f3286a4e6053ef7ec24995d7d
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -52,7 +52,7 @@ Statyczna biblioteka libgnomecups.
 %setup -q
 %patch0 -p1
 
-mv po/{no,nb}.po
+rm po/no.po
 
 %build
 cp -f /usr/share/automake/config.sub .
