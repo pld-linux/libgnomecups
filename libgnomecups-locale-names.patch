@@ -1,12 +1,11 @@
-diff -urN aa/libgnomecups-0.1.9/configure.in libgnomecups-0.1.9/configure.in
---- aa/libgnomecups-0.1.9/configure.in	2004-07-21 15:27:54.000000000 +0200
-+++ libgnomecups-0.1.9/configure.in	2004-07-23 13:44:58.823304592 +0200
+--- libgnomecups-0.1.11/configure.in.orig	2004-08-19 20:54:05.000000000 +0200
++++ libgnomecups-0.1.11/configure.in	2004-08-24 22:57:55.394920712 +0200
 @@ -39,7 +39,7 @@
  AC_PROG_INTLTOOL([0.20])
  
  dnl Add the languages which your application supports here.
--ALL_LINGUAS="ca cs de en_CA en_GB es eu fr hr hu is it ja nl no pt pt_BR sr sr@Latn sv uk"
-+ALL_LINGUAS="ca cs de en_CA en_GB es eu fr hr hu is it ja nb nl pt pt_BR sr sr@Latn sv uk"
+-ALL_LINGUAS=" ca cs de en_CA en_GB es eu fr hr hu is it ja nb nl no pt pt_BR sr sr@Latn sv uk"
++ALL_LINGUAS=" ca cs de en_CA en_GB es eu fr hr hu is it ja nb nl pt pt_BR sr sr@Latn sv uk"
  AM_GLIB_GNU_GETTEXT
  
  AC_OUTPUT([
