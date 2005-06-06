@@ -11,9 +11,13 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cups-devel
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.6.3
 BuildRequires:	gnome-common >= 2.8.0
+BuildRequires:	intltool
 BuildRequires:	libtool
+BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
