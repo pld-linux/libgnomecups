@@ -2,7 +2,7 @@ Summary:	GNOME CUPS library
 Summary(pl):	Biblioteka GNOME CUPS
 Name:		libgnomecups
 Version:	0.2.2
-Release:	3
+Release:	4
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
@@ -12,8 +12,8 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cups-devel
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.11.2
-BuildRequires:	gnome-common >= 2.8.0
+BuildRequires:	glib2-devel >= 1:2.12.0
+BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 0.9.7d
@@ -33,7 +33,7 @@ Summary(pl):	Pliki nag³ówkowe libgnomecups
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	cups-devel
-Requires:	glib2-devel >= 1:2.11.2
+Requires:	glib2-devel >= 1:2.12.0
 Requires:	openssl-devel >= 0.9.7d
 
 %description devel
@@ -62,6 +62,7 @@ Statyczna biblioteka libgnomecups.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure
 %{__make}
 
