@@ -2,7 +2,7 @@ Summary:	GNOME CUPS library
 Summary(pl):	Biblioteka GNOME CUPS
 Name:		libgnomecups
 Version:	0.2.2
-Release:	5
+Release:	6
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
