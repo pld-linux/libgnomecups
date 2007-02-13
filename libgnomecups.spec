@@ -1,5 +1,5 @@
 Summary:	GNOME CUPS library
-Summary(pl.UTF-8):   Biblioteka GNOME CUPS
+Summary(pl.UTF-8):	Biblioteka GNOME CUPS
 Name:		libgnomecups
 Version:	0.2.2
 Release:	6
@@ -29,7 +29,7 @@ Biblioteka GNOME CUPS - będąca interfejsem do biblioteki CUPS.
 
 %package devel
 Summary:	Devel files for libgnomecups
-Summary(pl.UTF-8):   Pliki nagłówkowe libgnomecups
+Summary(pl.UTF-8):	Pliki nagłówkowe libgnomecups
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	cups-devel
@@ -44,7 +44,7 @@ Pliki nagłówkowe libgnomecups.
 
 %package static
 Summary:	libgnomecups static library
-Summary(pl.UTF-8):   Statyczna biblioteka libgnomecups
+Summary(pl.UTF-8):	Statyczna biblioteka libgnomecups
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
