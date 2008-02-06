@@ -1,12 +1,12 @@
 Summary:	GNOME CUPS library
 Summary(pl.UTF-8):	Biblioteka GNOME CUPS
 Name:		libgnomecups
-Version:	0.2.2
-Release:	6
+Version:	0.2.3
+Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
-# Source0-md5:	959d5524fe9c37efb55ccfa02e3a063b
+# Source0-md5:	dc4920c15c9f886f73ea74fbff0ae48b
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -70,8 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name}
 
