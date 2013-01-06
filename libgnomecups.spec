@@ -7,6 +7,8 @@ License:	LGPL v2
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	dc4920c15c9f886f73ea74fbff0ae48b
+Patch0:		%{name}-glib.patch
+Patch1:		%{name}-format.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -56,6 +58,8 @@ Statyczna biblioteka libgnomecups.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
