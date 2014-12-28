@@ -13,7 +13,7 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	cups-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.12.1
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	intltool >= 0.20
