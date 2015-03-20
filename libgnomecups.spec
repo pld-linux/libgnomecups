@@ -2,7 +2,7 @@ Summary:	GNOME CUPS library
 Summary(pl.UTF-8):	Biblioteka GNOME CUPS
 Name:		libgnomecups
 Version:	0.2.3
-Release:	3
+Release:	4
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
@@ -10,6 +10,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomecups/0.2/%{name}-%{versi
 Patch0:		%{name}-glib.patch
 Patch1:		%{name}-format.patch
 Patch2:		%{name}-lpoptions.patch
+Patch3:		%{name}-0.2.3-cups-1.6.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -62,6 +63,7 @@ Statyczna biblioteka libgnomecups.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
