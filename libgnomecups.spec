@@ -5,10 +5,11 @@ Version:	0.2.3
 Release:	3
 License:	LGPL v2
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	dc4920c15c9f886f73ea74fbff0ae48b
 Patch0:		%{name}-glib.patch
 Patch1:		%{name}-format.patch
+Patch2:		%{name}-lpoptions.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -60,6 +61,7 @@ Statyczna biblioteka libgnomecups.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -72,11 +74,11 @@ Statyczna biblioteka libgnomecups.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
+	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{sr@Latn,sr@latin}
+mv -f $RPM_BUILD_ROOT%{_localedir}/{sr@Latn,sr@latin}
 
 %find_lang %{name}
 
@@ -88,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS 
+%doc AUTHORS ChangeLog NEWS
 %attr(755,root,root) %{_libdir}/libgnomecups-1.0.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgnomecups-1.0.so.1
 
