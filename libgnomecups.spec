@@ -2,16 +2,16 @@ Summary:	GNOME CUPS library
 Summary(pl.UTF-8):	Biblioteka GNOME CUPS
 Name:		libgnomecups
 Version:	0.2.3
-Release:	5
+Release:	6
 License:	LGPL v2
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
+Source0:	https://download.gnome.org/sources/libgnomecups/0.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	dc4920c15c9f886f73ea74fbff0ae48b
 Patch0:		%{name}-glib.patch
 Patch1:		%{name}-format.patch
 Patch2:		%{name}-lpoptions.patch
 Patch3:		%{name}-0.2.3-cups-1.6.patch
-URL:		http://www.gnome.org/
+URL:		https://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	cups-devel
@@ -76,11 +76,16 @@ Statyczna biblioteka libgnomecups.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_localedir}/{sr@Latn,sr@latin}
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgnomecups-1.0.la
+
+# unify locale name
+%{__mv} $RPM_BUILD_ROOT%{_localedir}/{sr@Latn,sr@latin}
 
 %find_lang %{name}
 
@@ -99,7 +104,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnomecups-1.0.so
-%{_libdir}/libgnomecups-1.0.la
 %{_includedir}/libgnomecups-1
 %{_pkgconfigdir}/libgnomecups-1.0.pc
 
